@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TibaKwanza</string>
+    <string name="title_activity_profile">Home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="payment_systems">Payment  Systems</string>
+    <string name="notifications">Notifications</string>
+    <string name="hospitals">Near by Hospitals</string>
+    <string name="about">TibaKwanza is the application that enables NHIF applicants to apply for the membership cards</string>
+</resources>
