@@ -2,9 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.miriam.tibakwanza">
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -27,17 +32,11 @@
             </intent-filter>
         </activity>
 
-        <!--Maps Android Key-->
+        <!-- Maps Android Key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCSDwqslj-2O8mTD_nD92XPxj6f-HgaS34"
-            />
-        <!--Maps-->
+            android:value="AIzaSyCSDwqslj-2O8mTD_nD92XPxj6f-HgaS34" />
+        <!-- Maps -->
     </application>
-
-    <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true"
-        />
 
 </manifest>

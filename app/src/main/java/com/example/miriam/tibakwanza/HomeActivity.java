@@ -1,33 +1,34 @@
 package com.example.miriam.tibakwanza;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.ImageView;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    ViewPager viewPager;
 
 
     @Override
@@ -47,26 +48,12 @@ public class HomeActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-        /*CustomListAdapter adapter=new CustomListAdapter(this, itemname, imgid);
-        list=findViewById(R.id.listview3);
-        list.setAdapter(adapter);
-
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                // TODO Auto-generated method stub
-                String Slecteditem= itemname[+position];
-                Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
-            }
-        });*/
         /*Timer timer = new Timer();
         timer.scheduleAtFixedRate(new MyTimerTask (),2000,4000);*/
 
 
     }
+
 
     @Override
     public void onBackPressed() {
@@ -94,6 +81,14 @@ public class HomeActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }else if (id == R.id.nav_share){
+            Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            String shareBodyText = "https;//play.google.com/store/apps/details?id=com.noelyhero.extreme.school";
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject here");
+            sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBodyText);
+            startActivity(Intent.createChooser(sharingIntent, "Shearing Option"));
             return true;
         }
 
@@ -127,7 +122,6 @@ public class HomeActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.layout,paymentFragment,"fragment 3");
             fragmentTransaction.commit();
 
-
         } else if (id == R.id.nav_about) {
             setTitle("About Us");
             AboutFragment aboutFragment = new AboutFragment();
@@ -158,19 +152,4 @@ public class HomeActivity extends AppCompatActivity
     }
 
 
-    /*public class MyTimerTask extends TimerTask {
-
-        @Override
-        public void run() {
-            if (viewPager.getCurrentItem()== 0){
-                viewPager.setCurrentItem(1);
-            }else if(viewPager.getCurrentItem() == 2) {
-                viewPager.setCurrentItem(2);
-            }
-            else {
-                viewPager.setCurrentItem(0);
-            }
-        }
-    }
-    */
 }

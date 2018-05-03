@@ -10,21 +10,18 @@ import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
     //Variable declaration
-Button login;
-EditText regNo,pass;
+Button lgn;
 TextView sign_up;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 //Variable initialization
-        login = findViewById(R.id.button);
-        regNo = findViewById(R.id.reg_no);
-        pass = findViewById(R.id.password);
-        sign_up = findViewById(R.id.signUp);
+        lgn = findViewById(R.id.login);
+        sign_up  =findViewById(R.id.sign_up);
 
-        //Starting new activity from login button
-        login.setOnClickListener(new View.OnClickListener() {
+                //Starting new activity from login button
+        lgn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this,HomeActivity.class);

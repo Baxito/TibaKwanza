@@ -19,7 +19,6 @@ import java.util.List;
  */
 public class NotificationsFragment extends Fragment {
 
-    String[] from = {"2min","10min","20min","50min","1hr","2hrs","5hrs","6hrs","8hrs","15hrs","20hrs","1day","2days","3days"};
     String[] info = {"Health Facts","NHIF updates","Health insurance education to all","Cost reviews on NHIF funds","Health Facts","New Health facilities","Types of NHIF cards beneficiaries","Information to all","Health Facts","Coverage in diseases","Health Facilities",};
 
 
